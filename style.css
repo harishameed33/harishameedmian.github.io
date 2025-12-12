@@ -1,0 +1,147 @@
+:root{
+  --text:#111;
+  --muted:#444;
+  --link:#1b4bb3;
+  --border:#cfcfcf;
+  --bg:#fff;
+  --sidebar:#f3f3f3;
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family: Georgia, "Times New Roman", serif;
+  color:var(--text);
+  background:var(--bg);
+}
+
+.layout{
+  display:flex;
+  min-height:100vh;
+}
+
+/* Sidebar */
+.sidebar{
+  width:220px;
+  background:var(--sidebar);
+  padding:20px 16px;
+  border-right:1px solid var(--border);
+}
+
+.menu-title{
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.nav a{
+  display:block;
+  padding:6px 0;
+  color:var(--link);
+  text-decoration:none;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+.nav a:hover{ text-decoration:underline; }
+
+/* Content */
+.content{
+  flex:1;
+  padding:24px 28px;
+  max-width:1100px;
+}
+
+.header-top h1{
+  margin:0;
+  color:var(--link);
+  font-size:40px;
+  font-weight:bold;
+}
+.line{
+  height:2px;
+  background:var(--border);
+  margin:10px 0 18px 0;
+}
+
+.header-grid{
+  display:grid;
+  grid-template-columns:170px 1fr;
+  gap:18px;
+  align-items:start;
+}
+
+.photo img{
+  width:160px;
+  height:auto;
+  border:1px solid var(--border);
+  padding:4px;
+  background:#fff;
+}
+
+.role{
+  margin:0 0 6px 0;
+  font-weight:bold;
+}
+
+.links{
+  margin-top:10px;
+  color:var(--muted);
+}
+.links a{
+  color:var(--link);
+  text-decoration:none;
+}
+.links a:hover{ text-decoration:underline; }
+
+.section{
+  margin-top:28px;
+}
+
+.section h2{
+  color:var(--link);
+  border-bottom:1px solid var(--border);
+  padding-bottom:6px;
+  margin-bottom:10px;
+  font-size:26px;
+}
+
+.card{
+  border:1px solid var(--border);
+  padding:14px 16px;
+  margin:14px 0;
+  background:#fff;
+}
+
+.card h3{
+  margin:0 0 8px 0;
+  color:#000;
+}
+
+.proj-img{
+  width:100%;
+  max-width:720px;
+  border:1px solid var(--border);
+  margin-top:10px;
+}
+
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.footer{
+  margin-top:30px;
+  padding-top:10px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .layout{ flex-direction:column; }
+  .sidebar{ width:100%; border-right:none; border-bottom:1px solid var(--border); }
+  .content{ padding:18px; }
+  .header-grid{ grid-template-columns:1fr; }
+  .photo img{ width:140px; }
+  .two-col{ grid-template-columns:1fr; }
+}
